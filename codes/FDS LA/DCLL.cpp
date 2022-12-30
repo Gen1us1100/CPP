@@ -40,7 +40,7 @@ class cinemax{//class for the cinemax
 
 void cinemax::create_list(){//MOST IMP function if done properly;
     
-    /*Next 4 lines will create a single node and set respective properties and line 47 will 
+    /*Next 4 lines will create a single node and set respective properties and line 49 will 
     set it's head pointer and tail pointer to itself as it is only node in the list*/
     temp = new Node;
     temp -> seat = 1;
