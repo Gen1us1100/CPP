@@ -57,7 +57,15 @@ int stack::empty(){
     else
     return 0;
 }
-
+/*Algorithm :
+    This worked on principle of : Last UNCLOSED bracket must be closed first
+    1. if it's an opening bracket push it to the stack
+    2. if it's a closing bracket :
+        a. check if stack is empty : not well 
+        b. check if top element of stack does not match the bracket: not well
+    3. if matches then pop the opening one from stack
+    4. a. if stack is empty : well
+        b. else : not well*/
 void checkparenthesis(string s){
     stack st;
     for(int i=0;i<s.length();i++){
