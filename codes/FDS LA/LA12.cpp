@@ -87,7 +87,7 @@ void Queue::dequeue(){
         //if(front-1 == rear)
         if(front == 0 && rear==MAX-1)
             front = rear = -1;//to reset the entire queue 
-            /*I sincerely doubt this logic GOTTA TEST */
+
     }
 }
 
