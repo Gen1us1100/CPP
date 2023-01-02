@@ -84,16 +84,41 @@ void infixtopostfix(string s){
         // then add it directly to the result string
         result += c;
 
-        else if(c == '(')
-        st.push('(');
+        else if(c == '('|| c == '['|| c == '{'){
+        switch(c){
+            case ('('): st.push('(');
+            case ('['): st.push('[');
+            case ('{'): st.push('{');
+            }
+        }
 
-        else if(c==')'){
-            while(st.topp() != '('){//if the char is ')' then add everything to result
+        else if(c==')' || c == ']' || c == '}'){
+            switch(c){
+            case (')'):{
+                while(st.topp() != '('){//if the char is ')' then add everything to result
             // until a '(' is occured and also pop everything from stack
                 result += st.topp();
+                st.pop();}
                 st.pop();
+                break;
             }
-            st.pop(); //This will pop the '('
+            case (']'):{
+                while(st.topp() != '['){
+                result += st.topp();
+                st.pop();}
+                st.pop();
+                break;
+                }
+            case ('}'):{
+                while(st.topp() != '{'){
+                result += st.topp();
+                st.pop();}
+                st.pop();
+                break;
+            }
+             
+            
+            }//This will pop the '('
         }
 
         else{//if the precedence of operator in string is <= precedence of operator in top of stack
