@@ -1,7 +1,7 @@
 /*Implement C++ program for expression conversion as infix to
 postfix and its evaluation using stack based on given conditions:
 1. Operands and operator, both must be single character.
-2. Input Postfix expression must be in a desired format.
+2. Input infix expression must be in a desired format.
     Only +, -, * and / operators are expected.*/
 
 /*Infix expression: The expression of the form a operator b (a + b). 
@@ -99,26 +99,26 @@ void infixtopostfix(string s){
             // until a '(' is occured and also pop everything from stack
                 result += st.topp();
                 st.pop();}
-                st.pop();
+                st.pop();//This will pop the '('
                 break;
             }
             case (']'):{
                 while(st.topp() != '['){
                 result += st.topp();
                 st.pop();}
-                st.pop();
+                st.pop();//This will pop the '['
                 break;
                 }
             case ('}'):{
                 while(st.topp() != '{'){
                 result += st.topp();
                 st.pop();}
-                st.pop();
+                st.pop();//This will pop the '{'
                 break;
             }
              
             
-            }//This will pop the '('
+            }
         }
 
         else{//if the precedence of operator in string is <= precedence of operator in top of stack
